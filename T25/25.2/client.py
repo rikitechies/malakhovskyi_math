@@ -7,7 +7,7 @@ def start_client():
     print("Введіть арифметичний вираз або 'exit' :")
     
     while True:
-        message = input(">>> ")
+        message = input("")
         client_socket.send(message.encode('utf-8'))
         
         if message.lower() == 'exit':
