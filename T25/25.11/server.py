@@ -12,7 +12,7 @@ def start_server():
 
     conn2, addr2 = server.accept()
     print(f"Клієнт 2 підключився: {addr2}")
-    conn2.send("Ви Клієнт 2. Починаємо чат!".encode('utf-16'))
+    conn2.send("Ви Клієнт 2. Очікуйте на повідомлення".encode('utf-16'))
 
     while True:
         msg1 = conn1.recv(1024)
@@ -20,7 +20,6 @@ def start_server():
         print(f"Клієнт 1 каже: {msg1.decode('utf-16')}")
         conn2.send(msg1)
 
-        # 2. Читаємо від Клієнта 2 -> Передаємо Клієнту 1
         msg2 = conn2.recv(1024)
         if not msg2 or msg2.decode('utf-16').lower() == 'exit': break
         print(f"Клієнт 2 каже: {msg2.decode('utf-16')}")
