@@ -8,7 +8,7 @@ def start_server():
 
     conn1, addr1 = server.accept()
     print(f"Клієнт 1 підключився: {addr1}")
-    conn1.send("Ви Клієнт 1. Очікуйте...".encode('utf-16'))
+    conn1.send("Ви Клієнт 1.".encode('utf-16'))
 
     conn2, addr2 = server.accept()
     print(f"Клієнт 2 підключився: {addr2}")
